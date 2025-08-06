@@ -1,0 +1,86 @@
+:root {
+    --base-color: #89253e;
+    --bg-color: color-mix(in srgb, var(--base-color) 5%, #1e1e2f);
+    --text-color: color-mix(in srgb, var(--base-color) 10%, #e0e0e0);
+}
+
+body {
+    background-color: var(--bg-color);
+    
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--base-color);
+}
+.container {
+    display: grid;
+    place-content: center;
+    margin: 5rem auto;
+    width: min(90%, 75rem);
+    grid-auto-flow: row;
+    gap: 1em;
+    color: var(--text-color);
+}
+
+#color-picking-section {
+    display: flex;
+    place-content: center;
+    flex-flow: column wrap;
+    gap: 20px 40px;
+}
+.avatar {
+    width: 200px;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--text-color);
+}
+
+#color-picker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+#color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+#inspiration-section {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px 40px;
+    margin-top: 5rem;
+}
+
+h2 {
+    margin: auto .5rem;
+}
+button {
+    width: 33%;
+    padding: 8px;
+    flex: 1 1 0;
+}
+
+.wobble {
+    width: 100px;
+    height: 100px;
+    background-color: var(--base-color);
+    border-radius: 50%;
+    place-self: center;
+  animation: wobble 2s ease infinite;
+}
+
+@keyframes wobble {
+  0% { transform: translateX(0%); }
+  15% { transform: translateX(-25%) rotate(-5deg); }
+  30% { transform: translateX(20%) rotate(3deg); }
+  45% { transform: translateX(-15%) rotate(-3deg); }
+  60% { transform: translateX(10%) rotate(2deg); }
+  75% { transform: translateX(-5%) rotate(-1deg); }
+  100% { transform: translateX(0%); }
+}
