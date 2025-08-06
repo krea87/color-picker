@@ -35,11 +35,14 @@ h1 {
     aspect-ratio: 1/1;
     border: 1px solid var(--text-color);
 }
-
+.input-field {
+    display: flex;
+    gap: 1rem;
+}
 #color-picker {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    
     cursor: pointer;
 }
 #color-picker::-webkit-color-swatch-wrapper {
@@ -47,7 +50,12 @@ h1 {
 }
 #color-picker::-webkit-color-swatch {
     border: none;
-    border-radius: 50%;
+}
+
+svg {
+    width: 50px;
+    animation: bounce-in-right 2s ease;
+    fill: white;
 }
 
 #inspiration-section {
@@ -83,4 +91,17 @@ button {
   60% { transform: translateX(10%) rotate(2deg); }
   75% { transform: translateX(-5%) rotate(-1deg); }
   100% { transform: translateX(0%); }
+}
+
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(800px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-10px);
+  }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
